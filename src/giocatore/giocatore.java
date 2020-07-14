@@ -28,4 +28,7 @@ public class giocatore {
 		for(personaggio i: listap)System.out.println(i.toString());
 	}
 	
+	public String toString() {
+		return name;
+	}
 }

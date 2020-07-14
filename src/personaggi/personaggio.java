@@ -35,7 +35,7 @@ public abstract class personaggio implements Comparable<personaggio> {
 
 	
 	 public abstract int forza();
-	 abstract void augment();
+	 public abstract void augment();
 	 
 	 personaggio sfida(personaggio o) {
 		 if(this.forza()>o.forza())return this;
