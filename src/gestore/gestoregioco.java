@@ -46,6 +46,7 @@ public class gestoregioco {
 			}
 	
 		}}
+	
 		public void trasferisci(personaggio o) {
 			int i;
 			do{ i=((int)(Math.random()*10));}
@@ -53,6 +54,11 @@ public class gestoregioco {
 			
 			listaGiocatori.get(i).listap.add(o);
 			}
+		
+		public void trasferisci(personaggio o, giocatore e) {
+			e.listap.add(o);
+			}
+		
 		
 		public void tradisci(String nome) {
 			for(giocatore e: listaGiocatori)
@@ -64,10 +70,25 @@ public class gestoregioco {
 		}
 		
 		public void tradisci(String iniziale, int codice) {
+			String pi=iniziale+codice;
 			for(giocatore e: listaGiocatori)
 				{for(personaggio p:e.listap)
-					{if(nome.equalsIgnoreCase(p.getNome()){
+					{if(pi.equalsIgnoreCase(p.ID){
 						e.listap.remove(p);
 						trasferisci(p);
 							}}}
 		}
+		
+		
+		public void tradisci(giocatore i, personaggio p) {
+			for(giocatore e: listaGiocatori)
+				if(e.equals(i))i.listap.add(p);
+		}
+		
+		int disparità(giocatore e, giocatore f) {
+			int i=0; int ii=0;
+			for(personaggio p: e.listap)i+=p.forza();
+			for(personaggio p: f.listap)ii+=p.forza();
+			return i-ii;
+		}
+}

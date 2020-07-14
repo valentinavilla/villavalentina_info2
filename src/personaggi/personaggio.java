@@ -3,9 +3,8 @@ package personaggi;
 import java.util.Vector;
 
 public abstract class personaggio implements Comparable<personaggio> {
-	String ID;
+	public String ID;
 	String Nome;
-	static int k;
 	static Vector<String> listaid=new Vector<String>();
 	
 	public personaggio( String Nome) throws IdnondisponibileException {
@@ -35,8 +34,13 @@ public abstract class personaggio implements Comparable<personaggio> {
 	public String getNome() {return Nome;}
 
 	
-	 abstract int forza();
+	 public abstract int forza();
 	 abstract void augment();
+	 
+	 personaggio sfida(personaggio o) {
+		 if(this.forza()>o.forza())return this;
+		 else return o;
+	 }
 	 
 
 }

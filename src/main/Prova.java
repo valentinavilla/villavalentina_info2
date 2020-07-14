@@ -1,10 +1,16 @@
 package main;
 
+import gestore.gestoregioco;
+import personaggi.IdnondisponibileException;
+
 public class Prova {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		gestoregioco g=new gestoregioco();
+		try {
+			g.caricaDatiDaFile();
+		} catch (IdnondisponibileException e) {
+			e.printStackTrace();
+		}
 
-	}
-
-}
+}}

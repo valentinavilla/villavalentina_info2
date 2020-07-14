@@ -1,0 +1,5 @@
+pino;W;M;S;
+gino;S;C;
+anna;W;S;C;
+lorenzo;S;
+Chri;C;
